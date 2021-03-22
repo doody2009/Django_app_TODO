@@ -1,0 +1,20 @@
+<h1>Liste des taches </h1>
+
+<ul>
+    {% for tache in taches %}
+    <li>
+        <img src="{{tache.image}}" >
+
+        <form style = "display: inline" action="/deleteTodo/{{tache.id}}" method="post">
+    {% csrf_token%}
+    <input type="submit" value="supprimer">
+</form>
+    </li>
+    {% endfor %}
+</ul>
+
+<form action="/addTodo/" method="post">
+    {% csrf_token%}
+    <input type="text" name="content">
+    <input type="submit" value="ajouter">
+</form>
