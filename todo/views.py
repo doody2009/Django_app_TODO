@@ -16,3 +16,5 @@ def deleteTodo(request, todo_id):
     elt_todelete = Todo.objects.get(id = todo_id)
     elt_todelete.delete()
     return HttpResponseRedirect('/general/')
+
+##mettez des commentaires explicatifs
